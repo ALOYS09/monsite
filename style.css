@@ -1,0 +1,545 @@
+/* ============================================
+   RESET ET STYLES DE BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* ============================================
+   VARIABLES CSS
+   ============================================ */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
+    --accent-color: #f59e0b;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #64748b;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   TYPOGRAPHIE
+   ============================================ */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-color);
+}
+
+/* ============================================
+   UTILITAIRES
+   ============================================ */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.section-title__highlight {
+    color: var(--primary-color);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn--primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn--secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn--action {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: 1rem;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.logo-highlight {
+    color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.navbar__link:hover {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   SECTION HERO
+   ============================================ */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero__title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.hero__description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ============================================
+   SECTION À PROPOS
+   ============================================ */
+.about {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about__image {
+    text-align: center;
+}
+
+.about__img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* ============================================
+   SECTION PASSIONS
+   ============================================ */
+.passions {
+    padding: 5rem 0;
+}
+
+.passions__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card__image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card:hover .card__img {
+    transform: scale(1.05);
+}
+
+.card__content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card__title {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   SECTION TECHNOLOGIES
+   ============================================ */
+.technologies {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+}
+
+.technologies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+}
+
+.tech-card__image {
+    height: 100px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-card__img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.tech-card__title {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer__text {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 992px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar__list {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .btn--action {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .hero__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .hero__description {
+        font-size: 1rem;
+    }
+}
+
+/* Styles pour les cartes de passions */
+.card__description {
+    font-size: 0.95rem;
+    color: var(--gray-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card__content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.card__title {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Section conclusion des passions */
+.passions__conclusion {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+.conclusion__text {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: var(--dark-color);
+}
+
+/* Section contact */
+.contact {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+}
+
+.contact__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact__text {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--dark-color);
+}
+
+.contact__buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Pied de page amélioré */
+.footer__subtext {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Styles pour les cartes de technologies */
+.tech-card__description {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+/* Responsive pour les cartes */
+@media (max-width: 768px) {
+    .card__title {
+        font-size: 1.2rem;
+    }
+    
+    .card__description {
+        font-size: 0.9rem;
+    }
+    
+    .passions__conclusion {
+        padding: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .conclusion__text {
+        font-size: 1rem;
+    }
+    
+    .contact__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact__buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card__content {
+        padding: 1rem;
+    }
+    
+    .passions__conclusion {
+        padding: 1rem;
+    }
+}
