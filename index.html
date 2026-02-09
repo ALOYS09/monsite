@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Mon Site Personnel - MOM SITE</title>
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-highlight">M</span>ON SITE
+        </a>
+        
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li class="navbar__item"><a href="#apropos" class="navbar__link">À propos</a></li>
+                <li class="navbar__item"><a href="#passion" class="navbar__link">Passions</a></li>
+                <li class="navbar__item"><a href="#technologies" class="navbar__link">Technologies</a></li>
+                <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
+            </ul>
+                <button onclick="afficherHeures()" class="btn btn--action">Afficher les heures</button>
+<div id="resultat"></div>
+
+<script>
+function afficherHeures() {
+    const villes = [
+        { nom: "Paris", fuseau: "Europe/Paris" },
+        { nom: "New York", fuseau: "America/New_York" },
+        { nom: "Tokyo", fuseau: "Asia/Tokyo" }
+    ];
+    
+    let html = '';
+    const maintenant = new Date();
+    
+    villes.forEach(ville => {
+        const heure = maintenant.toLocaleTimeString('fr-FR', {
+            timeZone: ville.fuseau,
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        html += `<p>${ville.nom}: ${heure}</p>`;
+    });
+    
+    document.getElementById('resultat').innerHTML = html;
+}
+</script>
+        
+        </nav>
+    </header>
+
+    <!-- Section Bannière/Hero -->
+    <section class="hero" id="banniere">
+        <div class="hero__content">
+            <h1 class="hero__title">Découvrez qui je suis</h1>
+            <p class="hero__description">
+                Chaque passion est une fenêtre sur qui je suis. Du sport à la technologie, des voitures anciennes à la cuisine, 
+                chaque centre d'intérêt contribue à forger ma personnalité et ma vision du monde. Explorez avec moi ces univers qui me fascinent.
+            </p>
+            <div class="hero__buttons">
+                <a href="#passion" class="btn btn--primary">Explorer mes passions</a>
+                <a href="#technologies" class="btn btn--secondary">Mes compétences</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__content">
+                    <h2 class="section-title">
+                        <span class="section-title__highlight">A</span>propos de moi
+                    </h2>
+                    <p class="about__text">
+                        Je m’appelle YEKPE Senan Aloys Wilfried, âgé de 25 ans. Je suis titulaire d’un baccalauréat série D et 
+                        mon dernier diplôme obtenu est le Brevet de Technicien Supérieur (BTS) en Informatique et Développement d’Applications (IDA).
+                         Cette formation m’a permis d’acquérir de solides connaissances en informatique, notamment dans le développement d’applications, 
+                         l’analyse de problèmes et la recherche de solutions adaptées.
+                    </p>
+                    <p class="about__text">
+                        Je suis une personne sérieuse, responsable et motivée, avec un bon sens de l’organisation et de la discipline. Je dispose
+                         également d’un permis de conduire toutes catégories, ce qui témoigne de mon sens des responsabilités et de mon autonomie.
+                         Reconnu pour ma bonne conduite, je respecte les règles et je m’intègre facilement dans un environnement professionnel.
+                    </p>
+                    <p>
+                        Dynamique et déterminé, je souhaite mettre mes compétences académiques, mes qualités personnelles et mon engagement au service 
+                        d’une structure afin de contribuer efficacement à son développement tout en renforçant mon expérience professionnelle.
+                    </p>
+                </div>
+                <div class="about__image">
+                    <img src="./image/IMG_3164.jpg" alt="Photo de profil" class="about__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Passions -->
+    <section class="passions" id="passion">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title__highlight">M</span>es univers
+                </h2>
+                <p class="section-description">
+                    Découvrez les différents mondes qui me passionnent et qui font de moi la personne que je suis aujourd'hui.
+                </p>
+            </div>
+
+            <div class="passions__grid">
+                <!-- Sport -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/sallesport.jpg" alt="Sport" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">🏋️ Le Sport</h3>
+                        <p class="card__description">
+                            Le sport est bien plus qu'une simple activité physique pour moi. C'est une école de vie qui m'enseigne 
+                            la discipline, la persévérance et le dépassement de soi. Que ce soit en salle de sport, en course à pied 
+                            ou dans les sports d'équipe, chaque séance est une nouvelle opportunité de repousser mes limites.
+                        </p>
+                        <p class="card__description">
+                            J'apprécie particulièrement le mélange entre force mentale et physique, et la façon dont le sport 
+                            améliore non seulement la santé mais aussi la concentration et la gestion du stress.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Technologie -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/technologie.jpg" alt="Technologie" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">💻 La Technologie</h3>
+                        <p class="card__description">
+                            Passionné par l'innovation et le numérique, je suis fasciné par la vitesse à laquelle la technologie 
+                            transforme notre monde. Du développement web aux nouvelles tendances comme l'IA et l'IoT, 
+                            j'aime comprendre comment les choses fonctionnent et anticiper les prochaines révolutions.
+                        </p>
+                        <p class="card__description">
+                            Cette passion me pousse à apprendre constamment de nouveaux langages de programmation, 
+                            à expérimenter avec de nouveaux frameworks et à suivre de près les dernières avancées technologiques.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Voitures de collection -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/voiture.jpg" alt="Voitures anciennes" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">🏎️ Voitures de Collection</h3>
+                        <p class="card__description">
+                            Les voitures anciennes représentent pour moi bien plus que des moyens de transport. 
+                            Ce sont des pièces d'histoire roulantes, témoins d'une époque et du génie mécanique de leur temps.
+                        </p>
+                        <p class="card__description">
+                            J'apprécie particulièrement le design rétro, le travail artisanal et l'histoire qui se cache derrière 
+                            chaque modèle. Restaurer, entretenir ou simplement admirer ces véhicules me connecte à un patrimoine 
+                            technique et esthétique unique.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Anime -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/anime.png" alt="Anime" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">🎌 Les Anime</h3>
+                        <p class="card__description">
+                            L'univers des anime me captive par sa diversité narrative et sa richesse artistique. 
+                            Loin des clichés, les anime offrent des histoires complexes, des développements de personnages profonds 
+                            et une créativité visuelle exceptionnelle.
+                        </p>
+                        <p class="card__description">
+                            J'apprécie particulièrement les œuvres qui explorent des thèmes philosophiques, psychologiques 
+                            ou sociaux, tout autant que celles qui offrent un pur divertissement. Chaque série est un voyage 
+                            dans un univers unique avec ses propres règles et son esthétique.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Cuisine -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/plat2.jpg" alt="Cuisine" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">👨‍🍳 La Cuisine</h3>
+                        <p class="card__description">
+                            La cuisine est pour moi un art créatif accessible à tous. C'est une forme d'expression 
+                            qui engage tous les sens et crée du lien social. J'aime expérimenter de nouvelles recettes, 
+                            mélanger les saveurs et découvrir des cuisines du monde entier.
+                        </p>
+                        <p class="card__description">
+                            Que ce soit une recette traditionnelle revisitée ou une création originale, chaque plat raconte une histoire. 
+                            La cuisine me permet de partager des moments précieux avec mes proches et de voyager à travers les saveurs.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Musique -->
+                <article class="card">
+                    <div class="card__image">
+                        <img src="./image/music.jpg" alt="Musique" class="card__img">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">🎵 La Musique</h3>
+                        <p class="card__description">
+                            La musique est le langage universel des émotions. Elle accompagne chaque moment de ma vie, 
+                            que ce soit pour me concentrer, me détendre ou trouver la motivation. J'apprécie une grande variété 
+                            de genres, des classiques intemporels aux découvertes contemporaines.
+                        </p>
+                        <p class="card__description">
+                            J'aime analyser les compositions, comprendre les arrangements et découvrir l'histoire derrière 
+                            les œuvres musicales. La musique est pour moi une source d'inspiration inépuisable et un moyen 
+                            d'expression personnel.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="passions__conclusion">
+                <h3 class="section-subtitle">Ces passions me définissent</h3>
+                <p class="conclusion__text">
+                    Chacune de mes passions apporte une dimension unique à ma vie. Le sport me donne la discipline et l'énergie, 
+                    la technologie stimule ma curiosité intellectuelle, les voitures anciennes me connectent à l'histoire, 
+                    les anime m'ouvrent à de nouveaux mondes narratifs, la cuisine nourrit ma créativité pratique, 
+                    et la musique enrichit ma vie émotionnelle.
+                </p>
+                <p class="conclusion__text">
+                    Ensemble, elles forment un équilibre entre corps, esprit et âme, entre tradition et innovation, 
+                    entre pratique et théorie. C'est cette diversité qui me permet d'aborder chaque projet avec une perspective riche et nuancée.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Technologies -->
+    <section class="technologies" id="technologies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title__highlight">M</span>es compétences techniques
+                </h2>
+                <p class="section-description">
+                    Mes passions pour la technologie se traduisent par des compétences concrètes que j'applique au quotidien.
+                </p>
+            </div>
+
+            <div class="technologies__grid">
+                <div class="tech-card">
+                    <div class="tech-card__image">
+                        <img src="./image/html.png" alt="HTML" class="tech-card__img">
+                    </div>
+                    <div class="tech-card__content">
+                        <h3 class="tech-card__title">HTML</h3>
+                        <p class="tech-card__description">
+                            Structure sémantique et accessibilité pour des sites web bien organisés.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card__image">
+                        <img src="./image/css.png" alt="CSS" class="tech-card__img">
+                    </div>
+                    <div class="tech-card__content">
+                        <h3 class="tech-card__title">CSS</h3>
+                        <p class="tech-card__description">
+                            Design responsive et animations pour des interfaces modernes et élégantes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card__image">
+                        <img src="./image/js.png" alt="JavaScript" class="tech-card__img">
+                    </div>
+                    <div class="tech-card__content">
+                        <h3 class="tech-card__title">JavaScript</h3>
+                        <p class="tech-card__description">
+                            Interactivité et logique pour des expériences utilisateur dynamiques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title__highlight">P</span>arlons de nos passions
+                </h2>
+                <p class="section-description">
+                    Partagez vos propres passions avec moi ou discutons de nos centres d'intérêt communs !
+                </p>
+            </div>
+            
+            <div class="contact__content">
+                <p class="contact__text">
+                    Vous avez une passion similaire ? Vous travaillez sur un projet intéressant ? 
+                    N'hésitez pas à me contacter pour échanger sur nos centres d'intérêt communs.
+                </p>
+                <div class="contact__buttons">
+                    <a href="mailto:contact@monsite.com" class="btn btn--primary">Envoyer un email</a>
+                    <a href="#" class="btn btn--secondary">Sur les réseaux sociaux</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">
+                &copy; 2025  yekpe aloys<br>
+                <span class="footer__subtext"></span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
